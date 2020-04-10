@@ -8,13 +8,19 @@ const hbs = require('hbs');
 const bodyParser = require('body-parser');
 //use mysql database
 const mysql = require('mysql');
+//create express app
 const app = express();
+//create router
+const router = express.Router();
+
+//register partials
+hbs.registerPartials(__dirname + '/views/partials');
 
 const database = mysql.createConnection({
   host: 'localhost',
-  user: '',
-  password: '',
-  database: '',
+  user: 'distweb',
+  password: 'password',
+  database: 'final_project',
   charset: 'utf8'
 });
 
@@ -33,9 +39,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //set public folder as static folder for static file
 app.use('/assets',express.static(__dirname + '/public'));
 
-//route for homepage
-app.get('/',(req, res) => {
+app.use('/', router);
 
+//route for homepage
+router.get('/',(req,res) => {
+  res.render('home');
 });
 
 //server listening
