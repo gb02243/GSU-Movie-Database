@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <title>Georgia Southern Movie Database</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="assets/css/custom-bootstrap.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
   <link rel="stylesheet" href="assets/css/jarallax.css">
   <script src="assets/js/jarallax.js"></script>
   <script src="assets/js/jarallax-element.js"></script>
@@ -12,30 +12,79 @@
 
 <body>
   {{>navbar}}
-  <!-- JUMBOTRON PARALLAX -->
-  <section id="jumbotron">
-    <div class="jumbotron jumbotron-fluid jarallax fullscreen">
-          <img class="jarallax-img" src="https://dummyimage.com/1920x1080/aaa/ffffff&text=jumbotron+image" alt="">
-          <div class="container navmargin">
-            <h1 class="display-4">Georgia Southern Movie Database</h1>
-            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-          </div>
-      </div>
-  </section>
-  <!-- END JUMBOTRON PARALLAX -->
 
-  <center>
-    <h1>Georgia Southern Movie Database</h1>
-  </center>
-  <!-- <a href="#"><img class="movieposter" src="https://dummyimage.com/240x360/fff/aaa"></a> -->
-  <!-- carousel -->
-  {{>poster_carousel}}
-  <!-- end carousel -->
+  <!-- HERO PARALLAX -->
+  <section id="hero">
+    <div class="jumbotron jumbotron-fluid jarallax h-100 no-bottom">
+      <img class="jarallax-img" src="https://d.newsweek.com/en/full/503903/georgia-southern-university-pic.jpg" alt="">
+      <div class="container navmargin">
+        <center>
+          <h1 class="display-4">Georgia Southern Movie Database</h1>
+          <div class="row h-100">
+            <div class="col-sm-12 my-auto">
+              <!-- SEARCH BAR -->
+              <div class="input-group input-group-lg mb-3">
+                <input type="text" class="form-control" placeholder="Search for a Movie...">
+                <div class="input-group-append">
+                  <button class="btn btn-success" type="button">Search</button>
+                </div>
+              </div>
+              <!-- END SEARCH BAD -->
+            </div>
+          </div>
+        </center>
+      </div>
+    </div>
+  </section>
+  <!-- END HERO PARALLAX -->
+  <!-- TOP 10 MOVIES -->
+  <section id="10movies" class="section-blue">
+    <center>
+      <div class="content">
+
+        <h1>Top 10 Movies</h1>
+        {{>table_movies}}
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed eros non sem accumsan elementum eget varius quam. Morbi lacinia feugiat dui ac euismod. Integer nec ullamcorper velit. Phasellus ornare eleifend justo a venenatis. Maecenas quis urna tincidunt, tempus turpis sed, vestibulum nunc. Pellentesque porttitor elementum sapien, quis gravida massa rutrum ut. Mauris quis lacus a odio aliquam tincidunt non quis leo. Pellentesque sollicitudin suscipit risus in egestas. In malesuada porta enim. Aenean condimentum pulvinar dapibus. Fusce non orci laoreet, varius metus et, ultricies diam. Aenean at ultrices ipsum, sit amet aliquam metus. Nam feugiat diam a finibus tincidunt. Suspendisse tempor arcu dui, euismod cursus ligula porta nec. Nullam gravida sollicitudin orci non sagittis. Suspendisse fringilla, dolor nec porttitor blandit, lorem justo tristique odio, ac cursus nulla dui sed felis.</p>
+        <p>Proin at faucibus turpis. In tristique imperdiet turpis, id sagittis metus tempus et. In id semper felis. Maecenas consectetur auctor enim, sit amet porttitor enim posuere nec. Integer eget leo maximus, luctus orci at, consectetur libero. Ut id consequat dolor. Aliquam vel posuere libero, vitae iaculis quam. Pellentesque at congue velit, in varius ex. Ut volutpat velit id fermentum ultricies. Duis quis elementum sapien, ac pellentesque diam. Donec auctor justo et sapien lacinia, vitae elementum diam luctus. Proin vulputate magna vitae lacinia molestie. Praesent id interdum arcu.</p>
+
+      </div>
+    </center>
+  </section>
+  <!-- END TOP 10 MOVIES -->
+  <!-- TOP 10 ACTORS -->
+  <section id="10actors" class="section-white">
+    <center>
+      <div class="content">
+        <h1>Top 10 Actors</h1>
+        {{>table_actors}}
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed eros non sem accumsan elementum eget varius quam. Morbi lacinia feugiat dui ac euismod. Integer nec ullamcorper velit. Phasellus ornare eleifend justo a venenatis. Maecenas quis urna tincidunt, tempus turpis sed, vestibulum nunc. Pellentesque porttitor elementum sapien, quis gravida massa rutrum ut. Mauris quis lacus a odio aliquam tincidunt non quis leo. Pellentesque sollicitudin suscipit risus in egestas. In malesuada porta enim. Aenean condimentum pulvinar dapibus. Fusce non orci laoreet, varius metus et, ultricies diam. Aenean at ultrices ipsum, sit amet aliquam metus. Nam feugiat diam a finibus tincidunt. Suspendisse tempor arcu dui, euismod cursus ligula porta nec. Nullam gravida sollicitudin orci non sagittis. Suspendisse fringilla, dolor nec porttitor blandit, lorem justo tristique odio, ac cursus nulla dui sed felis.</p>
+        <p>Proin at faucibus turpis. In tristique imperdiet turpis, id sagittis metus tempus et. In id semper felis. Maecenas consectetur auctor enim, sit amet porttitor enim posuere nec. Integer eget leo maximus, luctus orci at, consectetur libero. Ut id consequat dolor. Aliquam vel posuere libero, vitae iaculis quam. Pellentesque at congue velit, in varius ex. Ut volutpat velit id fermentum ultricies. Duis quis elementum sapien, ac pellentesque diam. Donec auctor justo et sapien lacinia, vitae elementum diam luctus. Proin vulputate magna vitae lacinia molestie. Praesent id interdum arcu.</p>
+
+      </div>
+    </center>
+  </section>
+  <!-- END TOP 10 ACTORS -->
+  <!-- TOP 10 GENRES -->
+  <section id="10genres" class="section-gold">
+    <center>
+      <div class="content">
+
+        <h1>Top 10 Genres</h1>
+        {{>table_genres}}
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed eros non sem accumsan elementum eget varius quam. Morbi lacinia feugiat dui ac euismod. Integer nec ullamcorper velit. Phasellus ornare eleifend justo a venenatis. Maecenas quis urna tincidunt, tempus turpis sed, vestibulum nunc. Pellentesque porttitor elementum sapien, quis gravida massa rutrum ut. Mauris quis lacus a odio aliquam tincidunt non quis leo. Pellentesque sollicitudin suscipit risus in egestas. In malesuada porta enim. Aenean condimentum pulvinar dapibus. Fusce non orci laoreet, varius metus et, ultricies diam. Aenean at ultrices ipsum, sit amet aliquam metus. Nam feugiat diam a finibus tincidunt. Suspendisse tempor arcu dui, euismod cursus ligula porta nec. Nullam gravida sollicitudin orci non sagittis. Suspendisse fringilla, dolor nec porttitor blandit, lorem justo tristique odio, ac cursus nulla dui sed felis.</p>
+        <p>Proin at faucibus turpis. In tristique imperdiet turpis, id sagittis metus tempus et. In id semper felis. Maecenas consectetur auctor enim, sit amet porttitor enim posuere nec. Integer eget leo maximus, luctus orci at, consectetur libero. Ut id consequat dolor. Aliquam vel posuere libero, vitae iaculis quam. Pellentesque at congue velit, in varius ex. Ut volutpat velit id fermentum ultricies. Duis quis elementum sapien, ac pellentesque diam. Donec auctor justo et sapien lacinia, vitae elementum diam luctus. Proin vulputate magna vitae lacinia molestie. Praesent id interdum arcu.</p>
+
+      </div>
+    </center>
+  </section>
+  <!-- END TOP 10 GENRES -->
+  <!-- FOOTER -->
+  {{>footer}}
+  <!-- END FOOTER -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <script type="text/javascript">
-  /* init Jarallax */
   jarallax(document.querySelectorAll('.jarallax'));
   </script>
 </body>
