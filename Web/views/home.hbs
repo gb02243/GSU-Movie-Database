@@ -3,13 +3,40 @@
   <meta charset="utf-8">
   <title>Georgia Southern Movie Database</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  </head>
+  <link rel="stylesheet" href="assets/css/custom-bootstrap.css">
+  <link rel="stylesheet" href="assets/css/jarallax.css">
+  <script src="assets/js/jarallax.js"></script>
+  <script src="assets/js/jarallax-element.js"></script>
+  <script src="assets/js/jarallax-video.js"></script>
+</head>
 
 <body>
   {{>navbar}}
-  <img src="https://dummyimage.com/100x100/fff/aaa">
+  <!-- JUMBOTRON PARALLAX -->
+  <section id="jumbotron">
+    <div class="jumbotron jumbotron-fluid jarallax fullscreen">
+          <img class="jarallax-img" src="https://dummyimage.com/1920x1080/aaa/ffffff&text=jumbotron+image" alt="">
+          <div class="container navmargin">
+            <h1 class="display-4">Georgia Southern Movie Database</h1>
+            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+          </div>
+      </div>
+  </section>
+  <!-- END JUMBOTRON PARALLAX -->
+
+  <center>
+    <h1>Georgia Southern Movie Database</h1>
+  </center>
+  <!-- <a href="#"><img class="movieposter" src="https://dummyimage.com/240x360/fff/aaa"></a> -->
+  <!-- carousel -->
+  {{>poster_carousel}}
+  <!-- end carousel -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+  /* init Jarallax */
+  jarallax(document.querySelectorAll('.jarallax'));
+  </script>
 </body>
 </html>
