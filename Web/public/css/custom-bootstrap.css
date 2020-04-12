@@ -1,0 +1,11 @@
+.movieposter {
+  box-shadow: 0px 10px 10px grey;
+}
+
+.navmargin {
+  padding-top: 4rem;
+}
+
+.fullscreen {
+  height: 100%;
+}
