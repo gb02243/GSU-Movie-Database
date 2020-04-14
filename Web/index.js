@@ -46,6 +46,11 @@ router.get('/',(req,res) => {
   res.render('home');
 });
 
+//route for aboutpage
+router.get('/about',(req,res) => {
+  res.render('about');
+});
+
 //server listening
 app.listen(8000, () => {
   console.log('Server is running at port 8000');

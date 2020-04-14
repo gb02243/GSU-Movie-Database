@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Georgia Southern Movie Database</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel="stylesheet" href="assets/css/jarallax.css">
+  <script src="assets/js/jarallax.js"></script>
+  <script src="assets/js/jarallax-element.js"></script>
+  <script src="assets/js/jarallax-video.js"></script>
+</head>
+
+<body>
+  {{>navbar}}
+
+  <!-- HERO PARALLAX -->
+  <section id="hero">
+    <div class="jumbotron jumbotron-fluid jarallax h-100 no-bottom">
+      <img class="jarallax-img" src="https://d.newsweek.com/en/full/503903/georgia-southern-university-pic.jpg" alt="">
+      <div class="container navmargin">
+        <center>
+          <h1 class="display-4">About Page</h1>
+          <div class="row h-100">
+            <div class="col-sm-12 my-auto">
+            </div>
+          </div>
+        </center>
+      </div>
+    </div>
+  </section>
+  <!-- END HERO PARALLAX -->
+
+  <!-- ABOUT -->
+  <section id="about" class="section-blue">
+    <center>
+      <div class="content">
+        <p>This is a website created by five students at Georgia Southern University for their final project in Distributed Web Systems.</p>
+        <p>It allows users to search for movies that are availiable. If you are looking for specific actors, you can search for them as well. You can also search for your favorite genre to find similar movies to what you already like.</p>
+        <p>Still not sure what to pick? The front page displays the top 10 movies, genres, and actors.</p>
+
+        <p>This website was created using NodeJS, MySQL, Javascript, HTML, and CSS. MySQL is used to maintain our database for the movies. NodeJS is used for server-side scripting allowing the website to access the database using Javascript.</p>
+        <!--
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed eros non sem accumsan elementum eget varius quam. Morbi lacinia feugiat dui ac euismod. Integer nec ullamcorper velit. Phasellus ornare eleifend justo a venenatis. Maecenas quis urna tincidunt, tempus turpis sed, vestibulum nunc. Pellentesque porttitor elementum sapien, quis gravida massa rutrum ut. Mauris quis lacus a odio aliquam tincidunt non quis leo. Pellentesque sollicitudin suscipit risus in egestas. In malesuada porta enim. Aenean condimentum pulvinar dapibus. Fusce non orci laoreet, varius metus et, ultricies diam. Aenean at ultrices ipsum, sit amet aliquam metus. Nam feugiat diam a finibus tincidunt. Suspendisse tempor arcu dui, euismod cursus ligula porta nec. Nullam gravida sollicitudin orci non sagittis. Suspendisse fringilla, dolor nec porttitor blandit, lorem justo tristique odio, ac cursus nulla dui sed felis.</p>
+        <p>Proin at faucibus turpis. In tristique imperdiet turpis, id sagittis metus tempus et. In id semper felis. Maecenas consectetur auctor enim, sit amet porttitor enim posuere nec. Integer eget leo maximus, luctus orci at, consectetur libero. Ut id consequat dolor. Aliquam vel posuere libero, vitae iaculis quam. Pellentesque at congue velit, in varius ex. Ut volutpat velit id fermentum ultricies. Duis quis elementum sapien, ac pellentesque diam. Donec auctor justo et sapien lacinia, vitae elementum diam luctus. Proin vulputate magna vitae lacinia molestie. Praesent id interdum arcu.</p>
+        -->
+      </div>
+    </center>
+  </section>
+  <!-- END ABOUT -->
+
+  <!-- CREDITS -->
+  <section id="credits" class="section-gold">
+    <center>
+      <div class="content">
+        <h1>Created By</h1>
+          <ul style="">
+            <li>Griffin Bryant</li>
+            <li>Grad Zeringue</li>
+            <li>Alan Harris</li>
+            <li>Evan Rowe</li>
+            <li>Hayes Barber</li>
+          </ul>
+      </div>
+    </center>
+  </section>
+  <!-- END CREDITS -->
+
+  <!-- FOOTER -->
+  {{>footer}}
+  <!-- END FOOTER -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+  jarallax(document.querySelectorAll('.jarallax'));
+  </script>
+</body>
+</html>
