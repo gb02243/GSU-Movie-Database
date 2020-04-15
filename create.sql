@@ -6,7 +6,7 @@ create table movie(
     movieID int(5) not null,
     movieTitle varchar(50) not null,
     movieDesc varchar(150),
-    movieReleaseDate date,
+    movieReleaseDate varchar(150),
     movieRuntime int(3) check (movieRuntime > 25),
     movieCertificate varchar(4) check (movieCertificate in ('N/A','PG','12','12A','15','15A','16','18')),
     movieRating double(2,1) check (movieRating > 0 and movieRating <= 10),
