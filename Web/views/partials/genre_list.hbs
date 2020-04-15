@@ -1,0 +1,19 @@
+<div class="row">
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Genre</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{@resetCounter}}
+      {{#each genresTable}}
+      <tr>
+        <th scope="row">{{@counter}}</th>
+        <td>{{this.genreType}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

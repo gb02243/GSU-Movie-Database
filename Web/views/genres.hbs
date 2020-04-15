@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Genres - GSMovieDB</title>
+  {{>global_links}}
+</head>
+
+<body>
+  {{>navbar}}
+  <!-- HERO PARALLAX -->
+  <section id="hero">
+    <div class="jumbotron jumbotron-fluid jarallax h-100 no-bottom">
+      <img class="jarallax-img" src="https://d.newsweek.com/en/full/503903/georgia-southern-university-pic.jpg" alt="">
+      <div class="container navmargin">
+        <center>
+          <h1 class="display-4">Georgia Southern Movie Database</h1>
+          <div class="row h-100">
+            <div class="col-sm-12 my-auto">
+              <!-- SEARCH BAR -->
+              <form action="/searchGenre" method="POST">
+                <div class="input-group input-group-lg mb-3">
+                  <input type="text" class="form-control" placeholder="Search for a Genre..." name="genreInput" required>
+                  <div class="input-group-append">
+                    <a href="#genresTable"><button class="btn btn-lg btn-success" type="submit">Search</button></a>
+                  </div>
+                </div>
+              </form>
+              <form action="/allGenres" method="POST">
+                <a href="#genresTable"><button class="btn btn-lg btn-primary mt-4" type="submit">View All Genres</button></a>
+              </form>
+              <!-- END SEARCH BAR -->
+            </div>
+          </div>
+        </center>
+      </div>
+    </div>
+  </section>
+  <!-- END HERO PARALLAX -->
+  <!-- MOVIES TABLE -->
+  <section id="genresTable" class="section-blue">
+    <center>
+      <div class="content">
+        <h1>Genres</h1>
+        {{>genre_list}}
+      </div>
+    </center>
+  </section>
+  <!-- END MOVIES TABLE -->
+  <!-- FOOTER -->
+  {{>footer}}
+  <!-- END FOOTER -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+  jarallax(document.querySelectorAll('.jarallax'));
+  </script>
+</body>
+</html>
