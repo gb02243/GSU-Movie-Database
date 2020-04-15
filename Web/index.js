@@ -41,10 +41,12 @@ app.use('/assets',express.static(__dirname + '/public'));
 
 app.use('/', router);
 
+let moviesQuery = 'SELECT A.movieRating, A.movieTitle, A.genreType, B.personFirstName, B.personLastName, A.movieReleaseDate FROM (Select movie.movieRating, movie.movieTitle, genre.genreType, movie.movieReleaseDate From movie Inner Join movie_genre On movie_genre.m_movieID = movie.movieID Inner Join genre On movie_genre.g_genreID = genre.genreID Order By movie.movieRating Desc) AS A JOIN (Select movie.movieRating, movie.movieTitle, person.personLastName, person.personFirstName, role.roleDesc From movie Inner Join role On role.m_movieID = movie.movieID Inner Join person On role.p_personID = person.personID Where role.roleDesc Like ("director") Order By movie.movieRating Desc) AS B ON A.movieTitle=B.movieTitle;';
+
 //route for homepage
 router.get('/', (req,res) => {
   // top 10 movies
-  let moviesQuery = 'SELECT A.movieRating, A.movieTitle, A.genreType, B.personFirstName, B.personLastName, A.movieReleaseDate FROM (Select movie.movieRating, movie.movieTitle, genre.genreType, movie.movieReleaseDate From movie Inner Join movie_genre On movie_genre.m_movieID = movie.movieID Inner Join genre On movie_genre.g_genreID = genre.genreID Order By movie.movieRating Desc) AS A JOIN (Select movie.movieRating, movie.movieTitle, person.personLastName, person.personFirstName, role.roleDesc From movie Inner Join role On role.m_movieID = movie.movieID Inner Join person On role.p_personID = person.personID Where role.roleDesc Like ("director") Order By movie.movieRating Desc) AS B ON A.movieTitle=B.movieTitle;';
+  moviesQuery = 'SELECT A.movieRating, A.movieTitle, A.genreType, B.personFirstName, B.personLastName, A.movieReleaseDate FROM (Select movie.movieRating, movie.movieTitle, genre.genreType, movie.movieReleaseDate From movie Inner Join movie_genre On movie_genre.m_movieID = movie.movieID Inner Join genre On movie_genre.g_genreID = genre.genreID Order By movie.movieRating Desc) AS A JOIN (Select movie.movieRating, movie.movieTitle, person.personLastName, person.personFirstName, role.roleDesc From movie Inner Join role On role.m_movieID = movie.movieID Inner Join person On role.p_personID = person.personID Where role.roleDesc Like ("director") Order By movie.movieRating Desc) AS B ON A.movieTitle=B.movieTitle;';
   database.query(moviesQuery,(err, moviesTable) => {
     if(err) throw err;
 
@@ -75,7 +77,26 @@ router.get('/about',(req,res) => {
 
 //route for about page
 router.get('/movies',(req,res) => {
-  res.render('movies');
+  database.query(moviesQuery,(err, moviesTable) => {
+    if(err) throw err;
+    res.render('movies', {
+      moviesTable:moviesTable
+    });
+  });
+});
+
+//post for movie search
+router.post('/searchMovie', (req, res) => {
+  let input = req.body.movieInput;
+
+  moviesQuery = 'SELECT A.movieRating, A.movieTitle, A.genreType, B.personFirstName, B.personLastName, A.movieReleaseDate FROM (Select movie.movieRating, movie.movieTitle, genre.genreType, movie.movieReleaseDate From movie Inner Join movie_genre On movie_genre.m_movieID = movie.movieID Inner Join genre On movie_genre.g_genreID = genre.genreID Order By movie.movieRating Desc) AS A JOIN (Select movie.movieRating, movie.movieTitle, person.personLastName, person.personFirstName, role.roleDesc From movie Inner Join role On role.m_movieID = movie.movieID Inner Join person On role.p_personID = person.personID Where role.roleDesc Like ("director") Order By movie.movieRating Desc) AS B ON A.movieTitle=B.movieTitle WHERE A.movieTitle LIKE (\"%'+input+'%\");';
+  res.redirect('movies#moviesTable');
+});
+
+//post for movie search
+router.post('/allMovies', (req, res) => {
+  moviesQuery = 'SELECT A.movieRating, A.movieTitle, A.genreType, B.personFirstName, B.personLastName, A.movieReleaseDate FROM (Select movie.movieRating, movie.movieTitle, genre.genreType, movie.movieReleaseDate From movie Inner Join movie_genre On movie_genre.m_movieID = movie.movieID Inner Join genre On movie_genre.g_genreID = genre.genreID Order By movie.movieRating Desc) AS A JOIN (Select movie.movieRating, movie.movieTitle, person.personLastName, person.personFirstName, role.roleDesc From movie Inner Join role On role.m_movieID = movie.movieID Inner Join person On role.p_personID = person.personID Where role.roleDesc Like ("director") Order By movie.movieRating Desc) AS B ON A.movieTitle=B.movieTitle;';
+  res.redirect('movies#moviesTable');
 });
 
 //server listening
@@ -83,24 +104,13 @@ app.listen(8000, () => {
   console.log('Server is running at port 8000');
 });
 
-// movie counter
+// list counter
 (function() {
-    var counter = 1;
-    hbs.registerHelper('movieCounter', function() {
-        return counter++;
-    });
-})();
-// actor counter
-(function() {
-    var counter = 1;
-    hbs.registerHelper('actorCounter', function() {
-        return counter++;
-    });
-})();
-// genre counter
-(function() {
-    var counter = 1;
-    hbs.registerHelper('genreCounter', function() {
-        return counter++;
-    });
+  var counter = 1;
+  hbs.registerHelper('counter', function() {
+    return counter++;
+  });
+  hbs.registerHelper('resetCounter', function() {
+    counter = 1;
+  });
 })();
