@@ -1,4 +1,4 @@
-use sequelmovie;
+use gsu_moviedb;
 
 /* movie inserts */
 insert into movie values (0001, 'The Shawshank Redemption', 'Two imprisoned men bond over a number of years', '1994-10-14', 142, '18', '4.5');
