@@ -9,10 +9,11 @@
     <tbody>
       {{#each genresTable}}
       <tr>
-        <th scope="row">{{@position}}</th>
+        <th scope="row">{{@genreCounter}}</th>
         <td>{{this.genreType}}</td>
       </tr>
       {{/each}}
+      {{@resetposition}}
     </tbody>
   </table>
 </div>

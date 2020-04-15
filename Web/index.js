@@ -68,9 +68,14 @@ router.get('/', (req,res) => {
   });
 });
 
-//route for aboutpage
+//route for about page
 router.get('/about',(req,res) => {
   res.render('about');
+});
+
+//route for about page
+router.get('/movies',(req,res) => {
+  res.render('movies');
 });
 
 //server listening
@@ -78,10 +83,24 @@ app.listen(8000, () => {
   console.log('Server is running at port 8000');
 });
 
-// index counter
+// movie counter
 (function() {
     var counter = 1;
-    hbs.registerHelper('position', function() {
+    hbs.registerHelper('movieCounter', function() {
+        return counter++;
+    });
+})();
+// actor counter
+(function() {
+    var counter = 1;
+    hbs.registerHelper('actorCounter', function() {
+        return counter++;
+    });
+})();
+// genre counter
+(function() {
+    var counter = 1;
+    hbs.registerHelper('genreCounter', function() {
         return counter++;
     });
 })();

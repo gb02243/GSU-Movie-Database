@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Home - GSMovieDB</title>
+  <title>Movies - GSMovieDB</title>
   {{>global_links}}
 </head>
 
@@ -17,14 +17,9 @@
           <h1 class="display-4">Georgia Southern Movie Database</h1>
           <div class="row h-100">
             <div class="col-sm-12 my-auto">
-              <!-- SEARCH BAR -->
-              <div class="input-group input-group-lg mb-3">
-                <input type="text" class="form-control" placeholder="Search for a Movie...">
-                <div class="input-group-append">
-                  <button class="btn btn-success" type="button">Search</button>
-                </div>
-              </div>
-              <!-- END SEARCH BAR -->
+              <!-- MOVIES TABLE -->
+              {{>movies_table}}
+              <!-- END MOVIES TABLE -->
             </div>
           </div>
         </center>
@@ -32,44 +27,6 @@
     </div>
   </section>
   <!-- END HERO PARALLAX -->
-  <!-- TOP 10 MOVIES -->
-  <section id="10movies" class="section-blue">
-    <center>
-      <div class="content">
-        <h1>Top 10 Movies</h1>
-        <p>(Ranked by IMDB Rating)</p>
-        {{>table_movies}}
-      </div>
-    </center>
-  </section>
-  <!-- END TOP 10 MOVIES -->
-  <!-- TOP 10 ACTORS -->
-  <section id="10actors" class="section-white">
-    <center>
-      <div class="content">
-        <h1>Top 10 Actors</h1>
-        <p>
-          (Ranked by Movie Ratings)
-        </p>
-        {{>table_actors}}
-      </div>
-    </center>
-  </section>
-  <!-- END TOP 10 ACTORS -->
-  <!-- TOP 10 GENRES -->
-  <section id="10genres" class="section-gold">
-    <center>
-      <div class="content">
-
-        <h1>Top 10 Genres</h1>
-        <p>
-          (Ranked by Movie Ratings)
-        </p>
-        {{>table_genres}}
-      </div>
-    </center>
-  </section>
-  <!-- END TOP 10 GENRES -->
   <!-- FOOTER -->
   {{>footer}}
   <!-- END FOOTER -->
