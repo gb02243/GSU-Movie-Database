@@ -85,6 +85,11 @@ router.get('/movies',(req,res) => {
   });
 });
 
+//post for movie search0
+router.post('/searchMovie', (req, res) => {
+  req.body.movieInput
+});
+
 //server listening
 app.listen(8000, () => {
   console.log('Server is running at port 8000');
