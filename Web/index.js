@@ -17,10 +17,10 @@ const router = express.Router();
 hbs.registerPartials(__dirname + '/views/partials');
 
 const database = mysql.createConnection({
-  host: 'localhost',
-  user: 'distweb',
-  password: 'password',
-  database: 'final_project',
+  host: '24.125.109.20',
+  user: 'gsu',
+  password: 'gsu2020',
+  database: 'gsu_moviedb',
   charset: 'utf8'
 });
 
