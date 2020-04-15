@@ -87,7 +87,7 @@ insert into role values (0020, 'writer', 0005, 0016);
 insert into role values (0021, 'lead actor', 0006, 0017);
 insert into role values (0022, 'co-actor', 0006, 0018);
 insert into role values (0023, 'director', 0006, 0019);
-insert into role values (0024, 'director', 0006, 0020);
+insert into role values (0024, 'co-director', 0006, 0020);
 insert into role values (0025, 'writer', 0006, 0019);
 insert into role values (0026, 'writer', 0006, 0020);
 insert into role values (0027, 'lead actor', 0007, 0021);
