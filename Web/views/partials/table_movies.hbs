@@ -3,13 +3,14 @@
     <thead>
       <tr>
         <th scope="col">Ranking</th>
+        <th scope="col">Rating</th>
         <th scope="col">Title</th>
         <th scope="col">Genre</th>
         <th scope="col">Director</th>
         <th scope="col">Release Date</th>
       </tr>
     </thead>
-    <tbody>
+    <!-- <tbody>
       <tr>
         <th scope="row">1</th>
         <td>Test Title</td>
@@ -24,6 +25,18 @@
         <td>Test Director</td>
         <td>Test Release Date</td>
       </tr>
+    </tbody> -->
+    <tbody>
+      {{#each moviesTable}}
+      <tr>
+        <th scope="row">{{this.count}}</th>
+        <td>{{this.movieRating}}</td>
+        <td>{{this.movieTitle}}</td>
+        <td>{{this.genreType}}</td>
+        <td>{{this.personFirstName}} {{this.personLastName}}</td>
+        <td>{{this.movieReleaseDate}}</td>
+      </tr>
+      {{/each}}
     </tbody>
   </table>
 </div>

@@ -43,7 +43,12 @@ app.use('/', router);
 
 //route for homepage
 router.get('/',(req,res) => {
-  res.render('home');
+  let moviesQuery = 'SELECT movie.movieRating, movie.movieTitle, genre.genreType, person.personFirstName, person.personLastName, CAST(movie.movieReleaseDate AS DATE), role.roleDesc FROM movie INNER JOIN movie_genre ON movie_genre.m_movieID = movie.movieID INNER JOIN genre ON movie_genre.g_genreID = genre.genreID INNER JOIN role ON role.m_movieID = movie.movieID INNER JOIN person ON role.p_personID = person.personID WHERE role.roleDesc LIKE "director" ORDER BY movie.movieRating Desc;';
+  database.query(moviesQuery,(err, rows, cols) => {
+    if(err) throw err;
+    res.render('home', {moviesTable:rows})
+    console.log(rows);
+  });
 });
 
 //route for aboutpage
