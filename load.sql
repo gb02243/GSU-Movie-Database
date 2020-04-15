@@ -25,26 +25,14 @@ insert into genre values (0008, 'Comedy', 'Comedy is a genre of film in which th
 /* movie-genre inserts */
 insert into movie_genre values (0001, 0001, 0001);
 insert into movie_genre values (0002, 0002, 0002);
-insert into movie_genre values (0003, 0002, 0001);
 insert into movie_genre values (0004, 0003, 0002);
-insert into movie_genre values (0005, 0003, 0003);
-insert into movie_genre values (0006, 0003, 0004);
 insert into movie_genre values (0007, 0004, 0002);
-insert into movie_genre values (0008, 0004, 0001);
 insert into movie_genre values (0009, 0005, 0001);
-insert into movie_genre values (0010, 0005, 0002);
 insert into movie_genre values (0011, 0006, 0003);
-insert into movie_genre values (0012, 0006, 0005);
 insert into movie_genre values (0013, 0007, 0004);
-insert into movie_genre values (0014, 0007, 0003);
-insert into movie_genre values (0015, 0007, 0005);
 insert into movie_genre values (0016, 0008, 0001);
-insert into movie_genre values (0017, 0008, 0006);
 insert into movie_genre values (0018, 0009, 0007);
-insert into movie_genre values (0019, 0009, 0001);
-insert into movie_genre values (0020, 0009, 0005);
 insert into movie_genre values (0021, 0010, 0008);
-insert into movie_genre values (0022, 0010, 0002);
 
 /* person inserts */
 insert into person values (0001, 'Morgan', 'Freeman', 'American', 'http://www.imdb.com/name/nm0000151/mediaviewer/rm3587479040?ref_=nm_ov_ph');
