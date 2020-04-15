@@ -62,6 +62,7 @@ insert into person values (0024, 'Ellen', null, 'American', 'http://www.imdb.com
 insert into person values (0025, 'Leonardo', 'DiCaprio', 'American', 'http://www.imdb.com/name/nm0000138/mediaviewer/rm487490304?ref_=nm_ov_ph');
 insert into person values (0026, 'Jonah', 'Hill', 'American', 'http://www.imdb.com/name/nm1706767/mediaviewer/rm4139364608?ref_=nm_ov_ph');
 insert into person values (0027, 'Martin', 'Scorsese', 'American', 'http://www.imdb.com/name/nm0000217/mediaviewer/rm1221431040?ref_=nm_ov_ph');
+insert into person values (0028, 'James', 'Mangold', 'American', 'https://www.imdb.com/name/nm0003506/mediaviewer/rm2996524544');
 
 /* role inserts */
 insert into role values (0001, 'co-actor', 0001, 0001);
@@ -92,12 +93,13 @@ insert into role values (0025, 'writer', 0006, 0019);
 insert into role values (0026, 'writer', 0006, 0020);
 insert into role values (0027, 'lead actor', 0007, 0021);
 insert into role values (0028, 'co-actor', 0007, 0022);
-insert into role values (0029, 'lead actor', 0008, 0021);
-insert into role values (0030, 'co-actor', 0008, 0008);
-insert into role values (0031, 'director', 0008, 0010);
-insert into role values (0032, 'lead actor', 0009, 0023);
-insert into role values (0033, 'co-actor', 0009, 0024);
-insert into role values (0034, 'director', 0009, 0010);
-insert into role values (0035, 'lead actor', 0010, 0025);
-insert into role values (0036, 'co-actor', 00010, 0026);
-insert into role values (0037, 'director', 00010, 0017);
+insert into role values (0029, 'director', 0007, 0028);
+insert into role values (0030, 'lead actor', 0008, 0021);
+insert into role values (0031, 'co-actor', 0008, 0008);
+insert into role values (0032, 'director', 0008, 0010);
+insert into role values (0033, 'lead actor', 0009, 0023);
+insert into role values (0035, 'co-actor', 0009, 0024);
+insert into role values (0036, 'director', 0009, 0010);
+insert into role values (0037, 'lead actor', 0010, 0025);
+insert into role values (0038, 'co-actor', 00010, 0026);
+insert into role values (0039, 'director', 00010, 0017);

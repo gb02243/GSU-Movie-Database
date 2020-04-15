@@ -10,26 +10,10 @@
         <th scope="col">Release Date</th>
       </tr>
     </thead>
-    <!-- <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Test Title</td>
-        <td>Test Genre</td>
-        <td>Test Director</td>
-        <td>Test Release Date</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Test Title</td>
-        <td>Test Genre</td>
-        <td>Test Director</td>
-        <td>Test Release Date</td>
-      </tr>
-    </tbody> -->
     <tbody>
       {{#each moviesTable}}
       <tr>
-        <th scope="row">{{this.count}}</th>
+        <th scope="row">{{@position}}</th>
         <td>{{this.movieRating}}</td>
         <td>{{this.movieTitle}}</td>
         <td>{{this.genreType}}</td>
