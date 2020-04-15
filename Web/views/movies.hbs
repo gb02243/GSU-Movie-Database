@@ -17,12 +17,15 @@
           <div class="row h-100">
             <div class="col-sm-12 my-auto">
               <!-- SEARCH BAR -->
-              <div class="input-group input-group-lg mb-3">
-                <input type="text" class="form-control" placeholder="Search for a Movie...">
-                <div class="input-group-append">
-                  <a href="#moviesTable"><button class="btn btn-lg btn-success" type="button">Search</button></a>
+              <form action="searchMovie" method="POST">
+                <div class="input-group input-group-lg mb-3">
+                  <input type="text" class="form-control" placeholder="Search for a Movie..." id="movieInput">
+                  <div class="input-group-append">
+                    <a href="#moviesTable"><button class="btn btn-lg btn-success" type="button">Search</button></a>
+                  </div>
                 </div>
-              </div>
+              </form>
+
               <a href="#moviesTable"><button class="btn btn-lg btn-primary mt-4" type="button">View All Movies</button></a>
               <!-- END SEARCH BAR -->
             </div>
