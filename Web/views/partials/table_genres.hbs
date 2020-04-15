@@ -7,14 +7,12 @@
       </tr>
     </thead>
     <tbody>
+      {{#each genresTable}}
       <tr>
-        <th scope="row">1</th>
-        <td>Test Genre</td>
+        <th scope="row">{{@position}}</th>
+        <td>{{this.genreType}}</td>
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Test Genre</td>
-      </tr>
+      {{/each}}
     </tbody>
   </table>
 </div>

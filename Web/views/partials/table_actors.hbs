@@ -5,22 +5,18 @@
         <th scope="col">Ranking</th>
         <th scope="col">First</th>
         <th scope="col">Last</th>
-        <th scope="col">DOB</th>
+        <th scope="col">Nationality</th>
       </tr>
     </thead>
     <tbody>
+      {{#each actorsTable}}
       <tr>
-        <th scope="row">1</th>
-        <td>First</td>
-        <td>Last</td>
-        <td>12-15-1997</td>
+        <th scope="row">{{@position}}</th>
+        <td>{{this.personFirstName}}</td>
+        <td>{{this.personLastName}}</td>
+        <td>{{this.personNationality}}</td>
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>First</td>
-        <td>Last</td>
-        <td>12-15-1997</td>
-      </tr>
+      {{/each}}
     </tbody>
   </table>
 </div>

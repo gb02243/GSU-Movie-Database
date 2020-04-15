@@ -42,14 +42,38 @@ app.use('/assets',express.static(__dirname + '/public'));
 app.use('/', router);
 
 //route for homepage
-router.get('/',(req,res) => {
+router.get('/', (req,res) => {
+  var moviesTable = [];
+  var actorsTable = [];
+  var genresTable = [];
+
+  // top 10 movies
   let moviesQuery = 'SELECT A.movieRating, A.movieTitle, A.genreType, B.personFirstName, B.personLastName, A.movieReleaseDate FROM (Select movie.movieRating, movie.movieTitle, genre.genreType, movie.movieReleaseDate From movie Inner Join movie_genre On movie_genre.m_movieID = movie.movieID Inner Join genre On movie_genre.g_genreID = genre.genreID Order By movie.movieRating Desc) AS A JOIN (Select movie.movieRating, movie.movieTitle, person.personLastName, person.personFirstName, role.roleDesc From movie Inner Join role On role.m_movieID = movie.movieID Inner Join person On role.p_personID = person.personID Where role.roleDesc Like ("director") Order By movie.movieRating Desc) AS B ON A.movieTitle=B.movieTitle;';
-  let rowIndex = 1;
-  database.query(moviesQuery,(err, rows, cols) => {
+  database.query(moviesQuery,(err, moviesTable) => {
     if(err) throw err;
-    res.render('home', {moviesTable:rows})
-    console.log(rows);
+    // top 10 actors
+    let actorsQuery = 'Select person.personFirstName, person.personLastName, role.roleDesc, movie.movieRating, person.personNationality From person Inner Join role On role.p_personID = person.personID Inner Join movie On role.m_movieID = movie.movieID Where role.roleDesc Like ("%actor%") Order By movie.movieRating Desc Limit 10;';
+    database.query(actorsQuery,(err, actorsTable) => {
+      if(err) throw err;
+      // top 10 genres
+      let genresQuery = 'Select distinct genre.genreType From genre Inner Join movie_genre On movie_genre.g_genreID = genre.genreID Inner Join movie On movie_genre.m_movieID = movie.movieID Order By movie.movieRating Desc;';
+      database.query(genresQuery,(err, genresTable) => {
+        if(err) throw err;
+        res.render('home', {
+          moviesTable:moviesTable,
+          actorsTable:actorsTable,
+          genresTable:genresTable
+        });
+      });
+    });
   });
+
+
+
+
+
+
+
 });
 
 //route for aboutpage
@@ -64,13 +88,8 @@ app.listen(8000, () => {
 
 // index counter
 (function() {
-    // Start at 1, name this unique to anything in this closure
     var counter = 1;
-
     hbs.registerHelper('position', function() {
         return counter++;
     });
-
-    // Compile/render your template here
-    // It will use the helper whenever it seems position
 })();

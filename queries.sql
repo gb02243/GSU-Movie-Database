@@ -39,9 +39,9 @@
 
   -- TOP 10 MOVIES WITH GENRE AND DIRECTOR
   SELECT A.movieRating, A.movieTitle, A.genreType, B.personFirstName, B.personLastName, A.movieReleaseDate FROM (Select movie.movieRating, movie.movieTitle, genre.genreType, movie.movieReleaseDate From movie Inner Join movie_genre On movie_genre.m_movieID = movie.movieID Inner Join genre On movie_genre.g_genreID = genre.genreID Order By movie.movieRating Desc) AS A JOIN (Select movie.movieRating, movie.movieTitle, person.personLastName, person.personFirstName, role.roleDesc From movie Inner Join role On role.m_movieID = movie.movieID Inner Join person On role.p_personID = person.personID Where role.roleDesc Like ("director") Order By movie.movieRating Desc) AS B ON A.movieTitle=B.movieTitle
-  
+
   -- TOP 10 ACTORS
-  SELECT person.personFirstName, person.personLastName, role.roleDesc FROM person INNER JOIN role ON role.p_personID = person.personID INNER JOIN movie ON role.m_movieID = movie.movieID WHERE role.roleDesc LIKE ("%actor%") ORDER BY movie.movieRating DESC LIMIT 10
+  Select person.personFirstName, person.personLastName, role.roleDesc, movie.movieRating, person.personNationality From person Inner Join role On role.p_personID = person.personID Inner Join movie On role.m_movieID = movie.movieID Where role.roleDesc Like ("%actor%") Order By movie.movieRating Desc Limit 10
 
   -- TOP 10 GENRES
-  SELECT DISTINCT genre.genreType FROM genre INNER JOIN movie_genre ON movie_genre.g_genreID = genre.genreID INNER JOIN movie ON movie_genre.m_movieID = movie.movieID ORDER BY movie.movieRating Desc
+  Select distinct genre.genreType From genre Inner Join movie_genre On movie_genre.g_genreID = genre.genreID Inner Join movie On movie_genre.m_movieID = movie.movieID Order By movie.movieRating Desc
