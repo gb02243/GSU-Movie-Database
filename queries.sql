@@ -2,26 +2,42 @@
 -- GENRE QUERIES
 --
 
-  -- SELECT ALL DRAMA MOVIES
+  -- ALL DRAMA MOVIES
   SELECT m.movieTitle FROM movie m, movie_genre mg, genre g WHERE m.movieID = mg.m_movieID AND mg.g_genreID = g.genreID AND g.genreType LIKE "%Drama%";
 
-  -- SELECT ALL CRIME MOVIES
+  -- ALL CRIME MOVIES
   SELECT m.movieTitle FROM movie m, movie_genre mg, genre g WHERE m.movieID = mg.m_movieID AND mg.g_genreID = g.genreID AND g.genreType LIKE "%Crime%";
 
-  -- SELECT ALL ACTION MOVIES
+  -- ALL ACTION MOVIES
   SELECT m.movieTitle FROM movie m, movie_genre mg, genre g WHERE m.movieID = mg.m_movieID AND mg.g_genreID = g.genreID AND g.genreType LIKE "%Action%";
 
-  -- SELECT ALL COMIC BOOK MOVIES
+  -- ALL COMIC BOOK MOVIES
   SELECT m.movieTitle FROM movie m, movie_genre mg, genre g WHERE m.movieID = mg.m_movieID AND mg.g_genreID = g.genreID AND g.genreType LIKE "%Comic Book%";
 
-  -- SELECT ALL SCI-FI MOVIES
+  -- ALL SCI-FI MOVIES
   SELECT m.movieTitle FROM movie m, movie_genre mg, genre g WHERE m.movieID = mg.m_movieID AND mg.g_genreID = g.genreID AND g.genreType LIKE "%Sci-Fi%";
 
-  -- SELECT ALL MYSTERY MOVIES
+  -- ALL MYSTERY MOVIES
   SELECT m.movieTitle FROM movie m, movie_genre mg, genre g WHERE m.movieID = mg.m_movieID AND mg.g_genreID = g.genreID AND g.genreType LIKE "%Mystery%";
 
-  -- SELECT ALL ADVENTURE MOVIES
+  -- ALL ADVENTURE MOVIES
   SELECT m.movieTitle FROM movie m, movie_genre mg, genre g WHERE m.movieID = mg.m_movieID AND mg.g_genreID = g.genreID AND g.genreType LIKE "%Adventure%";
 
-  -- SELECT ALL COMEDY MOVIES
+  -- ALL COMEDY MOVIES
   SELECT m.movieTitle FROM movie m, movie_genre mg, genre g WHERE m.movieID = mg.m_movieID AND mg.g_genreID = g.genreID AND g.genreType LIKE "%Comedy%";
+
+--
+-- MOVIE QUERIES
+--
+
+  -- SELECT ALL MOVIES
+  SELECT * FROM movie;
+
+--
+-- TOP 10 QUERIES
+--
+
+  -- TOP 10 MOVIES
+  SELECT m.movieTitle, g.genreType, p.personFirstName, p.personLastName, m.movieReleaseDate
+   FROM movie m, movie_genre mg, genre g, role r, person p 
+   WHERE m.movieID = mg.m_movieID AND mg.g_genreID = g.genreID AND ;

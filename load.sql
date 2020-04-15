@@ -1,16 +1,16 @@
 use gsu_moviedb;
 
 /* movie inserts */
-insert into movie values (0001, 'The Shawshank Redemption', 'Two imprisoned men bond over a number of years', '1994-10-14', 142, '18', '4.5');
-insert into movie values (0002, 'The Godfather', 'The aging patriarch of an organized crime dynasty transfers control to his son', '1972-3-24', 175, '18', '4.5');
-insert into movie values (0003, 'The Dark Knight','The menace known as the joker wreaks havoc on Gotham City', '2008-7-18', 152, '12', '4.5');
-insert into movie values (0004, 'American Psycho', 'A wealthy New York investment banking executive hides his alternate psychopathic ego', '2000-4-14', 102, '18', '4');
-insert into movie values (0005, 'Pulp Fiction', 'The lives of two mod hit men, a boxer, a gangster`s wife are all inter twinned', '1994-10-14', 154, '18', 4);
-insert into movie values (0006, 'The Matrix', 'A hacker learns from mysterious rebels about the true nature of his reality', '1999-3-31', 136, '18', 4);
-insert into movie values (0007, 'Logan', 'In a near future, a weary Logan cares for an ailing professor x', '2017-3-3', 135, '18', 5);
-insert into movie values (0008, 'The Prestige', 'Two stage magicians engage in competitive one-upmanship in an attempt to create the ultimate stage illusion', '2006-10-20', 135, '12', 5);
-insert into movie values (0009, 'Interstellar', 'A team of explorers travel through a wormhole in space in an attempt to save the human race', '2014-11-7', 169, '12', '5');
-insert into movie values (0010, 'The Wolf of Wall Street', 'Based on the true story of Jordan Belfort', '2013-12-25',  180, '18', 4);
+insert into movie values (0001, 'The Shawshank Redemption', 'Two imprisoned men bond over a number of years', '1994-10-14', 142, '18', '9.3');
+insert into movie values (0002, 'The Godfather', 'The aging patriarch of an organized crime dynasty transfers control to his son', '1972-3-24', 175, '18', '9.2');
+insert into movie values (0003, 'The Dark Knight','The menace known as the joker wreaks havoc on Gotham City', '2008-7-18', 152, '12', '9.0');
+insert into movie values (0004, 'American Psycho', 'A wealthy New York investment banking executive hides his alternate psychopathic ego', '2000-4-14', 102, '18', '7.6');
+insert into movie values (0005, 'Pulp Fiction', 'The lives of two mod hit men, a boxer, a gangster`s wife are all inter twinned', '1994-10-14', 154, '18', '8.9');
+insert into movie values (0006, 'The Matrix', 'A hacker learns from mysterious rebels about the true nature of his reality', '1999-3-31', 136, '18', '8.7');
+insert into movie values (0007, 'Logan', 'In a near future, a weary Logan cares for an ailing professor x', '2017-3-3', 135, '18', '8.1');
+insert into movie values (0008, 'The Prestige', 'Two stage magicians engage in competitive one-upmanship in an attempt to create the ultimate stage illusion', '2006-10-20', 135, '12', '8.5');
+insert into movie values (0009, 'Interstellar', 'A team of explorers travel through a wormhole in space in an attempt to save the human race', '2014-11-7', 169, '12', '8.6');
+insert into movie values (0010, 'The Wolf of Wall Street', 'Based on the true story of Jordan Belfort', '2013-12-25',  180, '18', '8.2');
 
 /* genre inserts */
 insert into genre values (0001, 'Drama', 'Drama film is a genre that relies on the emotional and relational development of realistic characters');
