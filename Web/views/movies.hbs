@@ -7,7 +7,6 @@
 
 <body>
   {{>navbar}}
-
   <!-- HERO PARALLAX -->
   <section id="hero">
     <div class="jumbotron jumbotron-fluid jarallax h-100 no-bottom">
@@ -17,9 +16,15 @@
           <h1 class="display-4">Georgia Southern Movie Database</h1>
           <div class="row h-100">
             <div class="col-sm-12 my-auto">
-              <!-- MOVIES TABLE -->
-              {{>movies_table}}
-              <!-- END MOVIES TABLE -->
+              <!-- SEARCH BAR -->
+              <div class="input-group input-group-lg mb-3">
+                <input type="text" class="form-control" placeholder="Search for a Movie...">
+                <div class="input-group-append">
+                  <a href="#moviesTable"><button class="btn btn-lg btn-success" type="button">Search</button></a>
+                </div>
+              </div>
+              <a href="#moviesTable"><button class="btn btn-lg btn-primary mt-4" type="button">View All Movies</button></a>
+              <!-- END SEARCH BAR -->
             </div>
           </div>
         </center>
@@ -27,6 +32,16 @@
     </div>
   </section>
   <!-- END HERO PARALLAX -->
+  <!-- MOVIES TABLE -->
+  <section id="moviesTable" class="section-blue">
+    <center>
+      <div class="content">
+        <h1>Movies</h1>
+        {{>movie_list}}
+      </div>
+    </center>
+  </section>
+  <!-- END MOVIES TABLE -->
   <!-- FOOTER -->
   {{>footer}}
   <!-- END FOOTER -->

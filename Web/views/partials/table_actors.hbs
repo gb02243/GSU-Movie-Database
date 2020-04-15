@@ -9,9 +9,10 @@
       </tr>
     </thead>
     <tbody>
+      {{@resetCounter}}
       {{#each actorsTable}}
       <tr>
-        <th scope="row">{{@actorCounter}}</th>
+        <th scope="row">{{@counter}}</th>
         <td>{{this.personFirstName}}</td>
         <td>{{this.personLastName}}</td>
         <td>{{this.personNationality}}</td>

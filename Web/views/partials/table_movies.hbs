@@ -11,9 +11,10 @@
       </tr>
     </thead>
     <tbody>
+      {{@resetCounter}}
       {{#each moviesTable}}
       <tr>
-        <th scope="row">{{@movieCounter}}</th>
+        <th scope="row">{{@counter}}</th>
         <td>{{this.movieRating}}/10</td>
         <td>{{this.movieTitle}}</td>
         <td>{{this.genreType}}</td>
